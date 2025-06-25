@@ -1,0 +1,54 @@
+<html>
+
+<head>
+
+    <!--cssの記述：ヘッダ埋込-->
+    <style media="screen">  /*画面に対するスタイル*/
+
+    /*imgタグに全て適用*/
+    img{
+        width: 100%;    /*横幅 : ブラウザに対して100%になるように拡大縮小*/
+        height: auto;   /*縦幅 : 画像のアスペクト比を保つように自動計算*/
+    }
+
+    /*originalクラス内のimgタグに適用するスタイル*/
+    .original img{
+        filter:none;
+    }
+
+    /*blurクラス内のimgタグに適用するスタイル*/
+    .blur img{
+        filter:blur(30px);
+    }
+
+    /*grayscaleクラス内のimgタグに適用するスタイル*/
+    .grayscale img{
+        filter:grayscale(100%);
+    }
+    
+
+    </style>
+
+</head>
+
+<body>
+    
+    <!--画像の表示-->
+    <div class="original">  <!--cssでのクラス名をつける"original"-->
+    <img src="image/test_bg.png"><br>
+    オリジナル画像<br>
+    </div>
+
+    <div class="blur">  <!--cssでのクラス名をつける"blur"-->
+    <img src="image/test_bg.png"><br>
+    ガウシアンぼかし : blur(30px);<br>
+    </div>
+
+    <div class="grayscale">  <!--cssでのクラス名をつける"grayscale"-->
+    <img src="image/test_bg.png"><br>
+    グレースケール : grayscale(100%);<br>
+    </div>
+
+</body>
+
+</html>
