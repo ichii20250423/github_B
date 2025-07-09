@@ -84,7 +84,40 @@
     }.hue-rotateC img{
         filter:hue-rotate(270deg);
     }
-    
+    .invertA img{
+        filter:invert(50%);
+    }
+    .invertB img{
+        filter:invert(100%);
+    }
+    .invertC img{
+        filter:invert(200%);
+    }
+
+    .opacityA img{
+        filter:opacity(10%);
+    }
+    .opacityB img{
+        filter:opacity(50%);
+    }.opacityC img{
+        filter:opacity(100%);
+    }
+    .saturateA img{
+        filter:saturate(0%);
+    }
+    .saturateB img{
+        filter:saturate(50%);
+    }.saturateC img{
+        filter:saturate(200%);
+    }
+    .sepiaA img{
+        filter:sepia(0%);
+    }
+    .sepiaB img{
+        filter:sepia(50%);
+    }.sepiaC img{
+        filter:sepia(200%);
+    }
 
     </style>
 
@@ -214,7 +247,116 @@
     色相 : hue-rotate(270deg)<br>
     </div>
 
+    <div class="original">
+    <img src="image/test_bg.png"><br>
+    反転 : invert(0%)<br>
+    </div>
 
+    <div class="invertA">
+    <img src="image/test_bg.png"><br>
+    反転 : invert(50%)<br>
+    </div>
+    <div class="invertB">
+    <img src="image/test_bg.png"><br>
+    反転 : invert(100%)<br>
+    </div>
+    <div class="invertC">
+    <img src="image/test_bg.png"><br>
+    反転 : invert(200%)<br>
+    </div>
+
+    <div class="original">
+    <img src="image/test_bg.png"><br>
+    半透明 : opacity(100%)<br>
+    </div>
+
+    <div class="opacityA">
+    <img src="image/test_bg.png"><br>
+    半透明 : opacity(10%)<br>
+    </div>
+    <div class="opacityB">
+    <img src="image/test_bg.png"><br>
+    半透明 : opacity(50%)<br>
+    </div>
+    <div class="opacityC">
+    <img src="image/test_bg.png"><br>
+    半透明 : opacity(200%)<br>
+    </div>
+
+    <div class="original">
+    <img src="image/test_bg.png"><br>
+    彩度 : saturate(100%)<br>
+    </div>
+
+    <div class="saturateA">
+    <img src="image/test_bg.png"><br>
+    彩度 : saturate(0%)<br>
+    </div>
+        <div class="saturateB">
+    <img src="image/test_bg.png"><br>
+    彩度 : saturate(50%)<br>
+    </div>
+    <div class="saturateC">
+    <img src="image/test_bg.png"><br>
+    彩度 : saturate(200%)<br>
+    </div>
+
+    <div class="original">
+    <img src="image/test_bg.png"><br>
+    セピア : sepia(100%)<br>
+    </div>
+    <div class="sepiaA">
+    <img src="image/test_bg.png"><br>
+    セピア : sepia(0%)<br>
+    </div>
+    <div class="sepiaB">
+    <img src="image/test_bg.png"><br>
+    セピア : sepia(50%)<br>
+    </div>
+    <div class="sepiaC">
+    <img src="image/test_bg.png"><br>
+    セピアÍ : sepia(200%)<br>
+    </div>
 </body>
 
 </html>
+
+
+<!--
+
+git add test0625.html
+
+git commit -m 'メッセージ'
+
+git push origin main
+
+
+・blur : ガウシアンブラー
+ガウス関数によって、周囲のピクセルのカラーを重みづけして合成
+※縦と横で独立して計算できる
+10x10=100　→ 10+10=20
+30x30=900  → 30+30=60
+
+・grayscale
+RGB　→ 平均化(RGB同じ値)：無彩色
+(R + G + B) / 3 = RGB
+R * 0.299 + G * 0.587 + B * 0.114 = RGB
+
+・反転
+iR = 1.0 - R
+iG = 1.0 - G
+iB = 1.0 - B
+
+・半透明
+線形補間(Linear Interpolation / Lerp)
+先(下地)：Destination (Dst)
+元(画像)：Source (Src)
+
+RGB = Src.RGB * Src.A + Dst.RGB * (1-Src.A)
+
+
+・RGB / HSV
+
+
+
+-->
