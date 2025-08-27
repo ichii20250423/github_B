@@ -1,0 +1,55 @@
+<html lang="en-US">
+<head>
+    <meta charset="utf-8"/>
+    <title>Gamedev Canvas Workshop</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        canvas
+        {
+            background:#eee;    /*クリアカラー*/
+            display:block;
+            margin:0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <!--キャンバスの設定-->
+    <canvas id="myCanvas" width="480" height="320"></canvas>
+
+    <script>
+        const canvas = document.getElementById("myCanvas");
+        const ctx = canvas.getContext("2d");
+
+        //ボールの位置を表す変数
+        let x = canvas.width/2;
+        let y = canvas.height - 30;
+        //ボールの座標の変化量(1回の描画(=フレーム)ごとに変化する値)
+        let dx = 2;
+        let dy = -2;
+
+        function draw() //描画用関数
+        {
+            //前フレームの描画を全部消す
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            ctx.beginPath();
+            ctx.arc(x, y, 10, 0, Math.PI*2); //円弧(0〜360度で円)
+            ctx.fillStyle="#0095DD";
+            ctx.fill();
+            ctx.closePath();
+            //座標を変化させる
+            x += dx;
+            y += dy;
+        }
+
+        //draw関数を10ms間隔で実行し続ける(描画ループ)
+        setInterval(draw, 10);
+    </script>
+
+</body>
+
+</html>
