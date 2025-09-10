@@ -1,0 +1,48 @@
+<html>
+<style>
+    img{
+        width: 100%;
+        height: auto;
+    }
+    .blur{
+        filter: blur(10px);
+    }
+
+    .grayscale {
+        filter: grayscale(100%);
+
+    }
+
+    div{
+        font-size: 30px;
+        font-weight: 900;
+        text-align: center;
+    }
+
+    .video{
+        width: 560px;
+        height: 315px;
+        margin: 60px auto 0;
+    }
+
+</style>
+<body>
+
+    <div>
+            <img src="./image/unnamed.png" alt="">
+    <br>元の画像<br>
+
+    <img class="blur" src="./image/unnamed.png" alt="">
+    <br>ぼかし filter: blur(10px)<br>
+
+    <img class="grayscale" src="./image/unnamed.png" alt="">
+    <br>白黒 filter: grayscale(100%) <br>
+    </div>
+
+    <div class="video">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/z1svHwZozHI?si=2MM4Fl406dnbIuO8"    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    
+</body>
+
+</html>
