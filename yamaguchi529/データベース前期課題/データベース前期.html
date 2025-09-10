@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>データベース前期解答</title>
+</head>
+<body>
+    <h1>Q1</h1>
+    <p>CREATE TABLE monster (<br/>
+        id INTEGER PRIMARY KEY,<br/>
+        name TEXT NOT NULL,<br/>
+        system TEXT NOT NULL,<br/>
+        HP NUMERIC,<br/>
+        experience NUMERIC,<br/>
+        dropitem TEXT<br/>
+        );
+    </p>
+
+    <h1>Q2</h1>
+    <p>
+        INSERT INTO monster (id, name, system, HP, experience, dropitem)VALUES(1, "スライム" ,"スライム",3,4,"やくそう");<br/>
+        INSERT INTO monster (id, name, system, HP, experience, dropitem)VALUES(2, "バブルスライム", "スライム",10,12,"どくけしそう");<br/>
+        INSERT INTO monster (id, name, system, HP, experience, dropitem)VALUES(3, "ミイラおとこ", "ゾンビ",35,73,"すごろくけん");<br/>
+        INSERT INTO monster (id, name, system, HP, experience, dropitem)VALUES(4, "くさったしたい", "ゾンビ", 98,120,"ぬののふく");<br/>
+        INSERT INTO monster (id, name, system, HP, experience, dropitem)VALUES(5, "メタルスライム", "スライム", 4,4140,"すばやさのたね");<br/>
+        INSERT INTO monster (id, name, system, HP, experience, dropitem)VALUES(6, "スカルドラゴン", "ドラゴン", 80,800,"いのちのきのみ");<br/>
+        INSERT INTO monster (id, name, system, HP, experience, dropitem)VALUES(7,"はぐれメタル", "スライム",  6,40200,"しあわせのくつ");<br/>
+        INSERT INTO monster (id, name, system, HP, experience, dropitem)VALUES(8,"ガメゴン","ドラゴン", 68,625,"てつかぶと");<br/>
+        INSERT INTO monster (id, name, system, HP, experience, dropitem)VALUES(9,"がいこつけんし","ゾンビ",75,843,"はがねのつるぎ");<br/>
+        INSERT INTO monster (id, name, system, HP, experience, dropitem)VALUES(10,"ドラゴン","ドラゴン",120,2600,"スタミナの種");<br/>
+        INSERT INTO monster (id, name, system, HP, experience, dropitem)VALUES(11,"カンダタ","???",300,2200,NULL);<br/>
+        INSERT INTO monster (id, name, system, HP, experience, dropitem)VALUES(12,"やまたのおろち","ドラゴン",1800,2080,"くさなぎのけん");<br/>
+        INSERT INTO monster (id, name, system, HP, experience, dropitem)VALUES(13,"バラモス","???",300,65535,NULL);<br/>
+        INSERT INTO monster (id, name, system, HP, experience, dropitem)VALUES(14,"ゾーマ","???",4700,0,NULL);<br/>
+        INSERT INTO monster (id, name, system, HP, experience, dropitem)VALUES(15,"しんりゅう","ドラゴン",7300,50000,NULL); 
+    </p>
+
+    <h1>
+    Q3
+    </h1>
+    <p>
+        SELECT id, name, HP FROM monster;
+    </p>
+
+    <h1>Q4</h1>
+    <p>
+        SELECT id, name, system, HP, experience<br/>
+        FROM monster<br/>
+        WHERE experience >= 1000;
+    </p>
+
+    <h1>Q5</h1>
+    <p>
+        SELECT id, name, dropitem<br/>
+        FROM monster<br/>
+        WHERE dropitem IS NULL;
+    </p>
+
+    <h1>Q6</h1>
+    <p>
+        SELECT system, AVG(HP) AS avg_HP<br/>
+        FROM monster<br/>
+        WHERE system = '???'<br/>
+        GROUP BY system;
+    </p>
+
+    <h1>Q7</h1>
+    <p>
+        SELECT system, COUNT(*) AS number_of_records<br/>
+        FROM monster<br/>
+        GROUP BY system;
+    </p>
+
+    <h1>Q8</h1>
+    <p>
+        SELECT name, system, dropitem<br/>
+        FROM monster<br/>
+        WHERE dropitem LIKE '%たね%' OR dropitem LIKE '%きのみ%';
+    </p>
+</body>
+</html>
